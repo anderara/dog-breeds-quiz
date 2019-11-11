@@ -21,6 +21,12 @@ export default function GameOne(props) {
         if (answer > 0) {
             alert("Congrats! Your answer is correct!")
             score = score +1
+            console.log('SCORE is ', score)
+            this.props.dispatch({
+                type: 'SCORE',
+                payload: score
+            })
+
         } else {
             alert("Oh no! Try again!")
             wrong = wrong +1

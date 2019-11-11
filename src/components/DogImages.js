@@ -4,8 +4,6 @@ export default function DogList(props) {
   
     if(!props.breedImages) return "Loading"
 
-    console.log(props)
-
   return (<div>
     <p>You selected: <strong> {props.selectedBreed} </strong> </p>
     <ul>
