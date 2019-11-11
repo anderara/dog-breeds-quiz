@@ -9,17 +9,15 @@ export default function GameOne(props) {
     const arrayBreeds = props.actualBreedsDisplayed
 
     const correctBreed = arrayBreeds[Math.floor(Math.random()*arrayBreeds.length)]
-    // console.log("BREED PICKED ", correctBreed)
+
     let score = 0
     let wrong = 0
 
     const Handleclick = (event) =>{
-        console.log("CLICK EVENT")
-        console.log("this is URL", event.target.id)
+
         const chosenPic = event.target.id
-        console.log("URL CHOSEN PIC", chosenPic)
         const answer = chosenPic.search(correctBreed)
-        console.log("THE ANSWER IS :", answer)
+
         if (answer > 0) {
             alert("Congrats! Your answer is correct!")
             score = score +1
@@ -27,7 +25,6 @@ export default function GameOne(props) {
             alert("Oh no! Try again!")
             wrong = wrong +1
         }
-
     }
 
    return (<div>
