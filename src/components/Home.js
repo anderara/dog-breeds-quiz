@@ -5,8 +5,6 @@ export default function(props) {
     const arrayGifs = props.gifs
     const gifDisplayed = arrayGifs[Math.floor(Math.random()*arrayGifs.length)]
 
-
-console.log("TEST IN HOME", gifDisplayed)
   return (<div>
     <main>
         <h1>Doggo Game</h1>

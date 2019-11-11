@@ -44,8 +44,10 @@ class GameOneContainer extends Component{
     render() {
         return(
             <div>
-                <GameOne randomDogsImages = {this.props.randomDogsImages} 
-                        actualBreedsDisplayed = {this.props.actualBreedsDisplayed} />
+                <GameOne
+                randomDogsImages = {this.props.randomDogsImages} 
+                actualBreedsDisplayed = {this.props.actualBreedsDisplayed}       
+                />
             </div> 
         )
     }

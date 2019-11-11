@@ -12,7 +12,6 @@ class HomeContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("TEST IN THE MAP", state.gifsHomePage.gifs)
   return {
       
     gifs: state.gifsHomePage.gifs
