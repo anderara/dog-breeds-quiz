@@ -42,12 +42,12 @@ class GameOneContainer extends Component{
       }
    
     render() {
-        // console.log("this.props test:", this.props)
-       return <div>
-           <GameOne randomDogsImages = {this.props.randomDogsImages} 
-                    actualBreedsDisplayed = {this.props.actualBreedsDisplayed} />
-                    {/* {console.log('random image :',this.props.randomDogsImages)} */}
-           </div> 
+        return(
+            <div>
+                <GameOne randomDogsImages = {this.props.randomDogsImages} 
+                        actualBreedsDisplayed = {this.props.actualBreedsDisplayed} />
+            </div> 
+        )
     }
 }
 
