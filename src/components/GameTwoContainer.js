@@ -36,7 +36,6 @@ class GameTwoContainer extends Component{
       }
     }
     const mapStateToProps = (state) => {
-       console.log(state)
         return {
             gameTwo: state.gameTwo, 
         }

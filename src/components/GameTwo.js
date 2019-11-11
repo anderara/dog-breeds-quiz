@@ -19,8 +19,7 @@ class GameTwo extends Component {
     
     render(){
         const gameOneDogs = this.props.randomDogs[0]
-       
-        console.log("these are the answers", gameOneDogs)
+
         return (
             <div>
                 <h4>Game one</h4>
