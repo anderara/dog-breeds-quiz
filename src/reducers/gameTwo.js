@@ -1,6 +1,5 @@
 const reducer = (state = [], action = {}) => {
-      switch (action.type) {
-
+    switch (action.type) {
       case "SET_DOG_QUESTION":
         return [
           ...state,
