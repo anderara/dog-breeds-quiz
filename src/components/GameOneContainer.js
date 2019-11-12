@@ -21,7 +21,7 @@ class GameOneContainer extends Component{
                }]
             })
         })
-         .catch(console.error)
+        .catch(console.error)
     }
 
     getArrayOfBreeds(arrayOfUrls) {

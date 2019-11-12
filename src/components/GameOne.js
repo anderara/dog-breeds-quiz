@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function GameOne(props) {
-    console.log('TESTING GAME ONE')
 
     if(!props.randomDogsImages) return "Loading"
     if(!props.actualBreedsDisplayed) return "Loading"
