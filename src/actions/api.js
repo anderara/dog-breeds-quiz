@@ -12,27 +12,34 @@ const getArrayOfBreeds = (arrayOfUrls) => {
     const firstBreed = arrayOne[4]
     const secondBreed = arrayTwo[4]
     const thirdBreed = arrayThree[4]
-
     const breedsFromImages = [firstBreed, secondBreed, thirdBreed]
     
     return breedsFromImages
 }
 
-export const startGameOne = () => (dispatch, getState) => {
-    request
-        .get('https://dog.ceo/api/breeds/image/random/3')
-        .then(response => {
-            const randomDogsImages = response.body.message
-            const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
+// export const contentGameOne = (randomDogsImages, actualBreedsDisplayed) => ({
+//     type: GAME_ONE,
+//     payload: [{
+//         images: randomDogsImages,
+//         breeds: actualBreedsDisplayed
+//     }]
+// })
 
-        dispatch(contentGameOne(randomDogsImages, actualBreedsDisplayed))
-    })
+export const startGameOne = () => {
+    return (dispatch) => {
+        request
+            .get('https://dog.ceo/api/breeds/image/random/3')
+            .then(response => {
+                const randomDogsImages = response.body.message
+                const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
+                dispatch({
+                    type: GAME_ONE,
+                    payload: [{
+                        images: randomDogsImages,
+                        breeds: actualBreedsDisplayed
+                    }]
+                })
+        })
+        .catch(console.error)
+    }
 }
-
-export const contentGameOne = (randomDogsImages, actualBreedsDisplayed) => ({
-    type: GAME_ONE,
-    payload: [{
-        images: randomDogsImages,
-        breeds: actualBreedsDisplayed
-    }]
-})

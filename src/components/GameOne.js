@@ -10,26 +10,16 @@ export default function GameOne(props) {
 
     const correctBreed = arrayBreeds[Math.floor(Math.random()*arrayBreeds.length)]
 
-    let score = 0
-    let wrong = 0
-
-    console.log('TESTING GAME ONE')
-    console.log('score is', score)
-
     const Handleclick = (event) =>{
-
         const chosenPic = event.target.id
         const answer = chosenPic.search(correctBreed)
 
         if (answer > 0) {
             alert("Congrats! Your answer is correct!")
-            score = score +1
 
         } else {
             alert("Oh no! Try again!")
-            wrong = wrong +1
         }
-        console.log('SCORE is ', score)
             
         // const scoring = () => {
         //     this.dispatch({
@@ -41,7 +31,7 @@ export default function GameOne(props) {
     }
 
    return (<div>
-            <h2>Game Two</h2> <h2>your score: {score}</h2>
+            <h2>Game Two</h2> <h2>your score: </h2>
             <p>Please select the picture displaying a: </p>
             <h3> {correctBreed} </h3>
 
