@@ -1,4 +1,5 @@
 import request from 'superagent'
+export const GAME_ONE = 'GAME_ONE'
 
 const getArrayOfBreeds = (arrayOfUrls) => {
     const splittedUrls = arrayOfUrls.map(url=>{
@@ -16,3 +17,22 @@ const getArrayOfBreeds = (arrayOfUrls) => {
     
     return breedsFromImages
 }
+
+export const startGameOne = () => (dispatch, getState) => {
+    request
+        .get('https://dog.ceo/api/breeds/image/random/3')
+        .then(response => {
+            const randomDogsImages = response.body.message
+            const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
+
+        dispatch(contentGameOne(randomDogsImages, actualBreedsDisplayed))
+    })
+}
+
+export const contentGameOne = (randomDogsImages, actualBreedsDisplayed) => ({
+    type: GAME_ONE,
+    payload: [{
+        images: randomDogsImages,
+        breeds: actualBreedsDisplayed
+    }]
+})
