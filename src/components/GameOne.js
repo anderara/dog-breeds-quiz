@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function GameOne(props) {
+    console.log('TESTING GAME ONE')
 
     if(!props.randomDogsImages) return "Loading"
     if(!props.actualBreedsDisplayed) return "Loading"
@@ -14,6 +15,7 @@ export default function GameOne(props) {
     let wrong = 0
 
     console.log('TESTING GAME ONE')
+    console.log('score is', score)
 
     const Handleclick = (event) =>{
 
@@ -28,11 +30,15 @@ export default function GameOne(props) {
             alert("Oh no! Try again!")
             wrong = wrong +1
         }
-        // console.log('SCORE is ', score)
-        //     this.props.dispatch({
+        console.log('SCORE is ', score)
+            
+        // const scoring = () => {
+        //     this.dispatch({
         //         type: 'SCORE',
-        //         payload: score
+        //         // payload: score
         //     })
+        // }
+        // scoring()
     }
 
    return (<div>
