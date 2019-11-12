@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { startGameOne } from '../actions/api'
+import { connect } from 'react-redux'
 
-export default function GameOne(props) {
+class GameOne extends Component {
 
-    if(!props.randomDogsImages) return "Loading"
-    if(!props.actualBreedsDisplayed) return "Loading"
+    render() {
+    if(!this.props.randomDogsImages) return "Loading"
+    if(!this.props.actualBreedsDisplayed) return "Loading"
 
-    const arrayUrls =  props.randomDogsImages
-    const arrayBreeds = props.actualBreedsDisplayed
+    const arrayUrls =  this.props.randomDogsImages
+    const arrayBreeds = this.props.actualBreedsDisplayed
 
     const correctBreed = arrayBreeds[Math.floor(Math.random()*arrayBreeds.length)]
 
@@ -16,18 +19,11 @@ export default function GameOne(props) {
 
         if (answer > 0) {
             alert("Congrats! Your answer is correct!")
+            this.props.startGameOne()
 
         } else {
             alert("Oh no! Try again!")
         }
-            
-        // const scoring = () => {
-        //     this.dispatch({
-        //         type: 'SCORE',
-        //         // payload: score
-        //     })
-        // }
-        // scoring()
     }
 
    return (<div>
@@ -48,4 +44,11 @@ export default function GameOne(props) {
 
       </div>)
 }
+}
 
+const mapStateToProps = (state) => {
+	return {
+	}
+}
+
+export default connect(mapStateToProps, {startGameOne})(GameOne)
