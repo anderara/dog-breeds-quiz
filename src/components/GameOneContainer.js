@@ -11,21 +11,32 @@ class GameOneContainer extends Component{
    
     render() {
         return(
+
             <div>
+              {(this.props.givenAnswer === null)?
                 <GameOne
                 randomDogsImages = {this.props.randomDogsImages} 
                 actualBreedsDisplayed = {this.props.actualBreedsDisplayed}       
                 />
+    
+              :(this.props.givenAnswer === true)?
+                <h3>correct answer!</h3>
+              :
+                <h3>wrong answer!</h3>          
+              }
             </div> 
+    
         )
     }
 }
 
 const mapStateToProps = (state) => {
+
     const [game] = state.startGame
     if (game) return {
         randomDogsImages: game.images,
-        actualBreedsDisplayed: game.breeds
+        actualBreedsDisplayed: game.breeds,
+        givenAnswer: state.givenAnswer
     }
 }
 

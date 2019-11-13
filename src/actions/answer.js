@@ -31,20 +31,38 @@ export const upcomingAnswer = () => {
 	})
 }
 
+export const ANSWER_GAME_ONE = 'ANSWER_GAME_ONE'
+export const answerGameOne = (answer) => {
+	return (dispatch) => {
+        dispatch({
+        type: ANSWER_GAME_ONE,
+        payload: answer
+        })
+	}
+}
+
+export const ANSWER_GAME_TWO = 'ANSWER_GAME_TWO'
+export const answerGameTwo = (answer) => {
+	return (dispatch) => {
+        dispatch({
+        type: UPCOMING_ANSWER,
+        payload: answer
+        })
+	}
+}
+
 export const isItCorrect = (answer) => {
     return async (dispatch, getState) => {
         if (answer>0) {
             dispatch(correctAnswer())
             await sleep(HALF_A_SECOND)
             dispatch(startGame())
-            alert('Correct answer')
             await sleep(TWO_SECONDS)
             dispatch(upcomingAnswer())
         } else {
             dispatch(wrongAnswer())
             await sleep(HALF_A_SECOND)
             dispatch(startGame())
-            alert('wrong answer')
             await sleep(TWO_SECONDS)
             dispatch(upcomingAnswer())
         }
