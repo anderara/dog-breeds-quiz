@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { startGameTwo } from '../actions/api'
+import {wrongAnswer, correctAnswer, isItCorrect} from '../actions/answer'
 import { connect } from 'react-redux'
 
 class GameTwo extends Component {
@@ -15,13 +16,17 @@ render() {
         const chosenBreed = event.target.value
         const answer = displayedPicture.search(chosenBreed)
 
-        if (answer > 0) {
-            alert("Congrats! Your answer is correct!")
-            this.props.startGameTwo()
+        this.props.isItCorrect(answer)
 
-        } else {
-            alert("Oh no! Try again!")
-        }
+        // if (answer > 0) {
+        //     alert("Congrats! Your answer is correct!")
+        //     // this.props.startGameTwo()
+        //     this.props.correctAnswer()
+
+        // } else {
+        //     alert("Oh no! Try again!")
+        //     this.props.wrongAnswer()
+        // }
     }
 
    return (<div>
@@ -48,4 +53,4 @@ const mapStateToProps = (state) => {
 	return {}
 }
 
-export default connect(mapStateToProps, {startGameTwo})(GameTwo)
+export default connect(mapStateToProps, {startGameTwo, wrongAnswer, correctAnswer, isItCorrect})(GameTwo)
