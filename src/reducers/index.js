@@ -4,9 +4,7 @@ import breedImages from './breedImages'
 import startGame from './startGame'
 import gifsHomePage from './gifsHomePage'
 import givenAnswer from './givenAnswer'
-import answerGameOne from './answerGameOne'
-import answerGameTwo from './answerGameTwo'
-
+import answerGame from './answerGame'
 
 export default combineReducers ({
     breeds,
@@ -14,6 +12,5 @@ export default combineReducers ({
     startGame,
     gifsHomePage,
     givenAnswer,
-    answerGameOne,
-    answerGameTwo
+    answerGame
 })

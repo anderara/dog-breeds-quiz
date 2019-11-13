@@ -17,7 +17,7 @@ render() {
         const answer = displayedPicture.search(chosenBreed)
         console.log('the answer is', answer)
 
-        this.props.isItCorrect(answer)
+        this.props.isItCorrect(answer, displayedPicture)
 
     }
 

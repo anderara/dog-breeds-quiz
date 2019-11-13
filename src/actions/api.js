@@ -46,22 +46,3 @@ export const startGame = () => {
         .catch(console.error)
     }
 }
-
-// export const startGameTwo = () => {
-//     return (dispatch) => {
-//         request
-//             .get('https://dog.ceo/api/breeds/image/random/3')
-//             .then(response => {
-//                 const randomDogsImages = response.body.message
-//                 const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
-//                 dispatch({
-//                     type: GAME_TWO,
-//                     payload: [{
-//                         images: randomDogsImages,
-//                         breeds: actualBreedsDisplayed
-//                     }]
-//                 })
-//         })
-//         .catch(console.error)
-//     }
-// }

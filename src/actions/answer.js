@@ -31,27 +31,18 @@ export const upcomingAnswer = () => {
 	})
 }
 
-export const ANSWER_GAME_ONE = 'ANSWER_GAME_ONE'
-export const answerGameOne = (answer) => {
+export const ANSWER_GAME = 'ANSWER_GAME'
+export const answerGame = (correctUrl) => {
+    console.log('answer payload', correctUrl)
 	return (dispatch) => {
         dispatch({
-        type: ANSWER_GAME_ONE,
-        payload: answer
+        type: ANSWER_GAME,
+        payload: correctUrl
         })
 	}
 }
 
-export const ANSWER_GAME_TWO = 'ANSWER_GAME_TWO'
-export const answerGameTwo = (answer) => {
-	return (dispatch) => {
-        dispatch({
-        type: UPCOMING_ANSWER,
-        payload: answer
-        })
-	}
-}
-
-export const isItCorrect = (answer) => {
+export const isItCorrect = (answer, correctUrl) => {
     return async (dispatch, getState) => {
         if (answer>0) {
             dispatch(correctAnswer())
@@ -60,6 +51,9 @@ export const isItCorrect = (answer) => {
             await sleep(TWO_SECONDS)
             dispatch(upcomingAnswer())
         } else {
+            console.log('isItcorrect', correctUrl)
+            dispatch(answerGame(correctUrl))
+            await sleep(ONE_THIRD_OF_A_SECOND)
             dispatch(wrongAnswer())
             await sleep(HALF_A_SECOND)
             dispatch(startGame())
