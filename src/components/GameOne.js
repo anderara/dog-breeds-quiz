@@ -47,8 +47,7 @@ class GameOne extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return {
-	}
+	return {}
 }
 
 export default connect(mapStateToProps, {startGameOne})(GameOne)

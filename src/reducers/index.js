@@ -4,7 +4,7 @@ import breedImages from './breedImages'
 import gameOne from './gameOne'
 import gifsHomePage from './gifsHomePage'
 import gameTwo from './gameTwo'
-import score from './score'
+import givenAnswer from './givenAnswer'
 
 
 export default combineReducers ({
@@ -13,6 +13,6 @@ export default combineReducers ({
     gameOne,
     gifsHomePage,
     gameTwo,
-    score
+    givenAnswer
 
 })

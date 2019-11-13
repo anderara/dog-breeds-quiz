@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import request from 'superagent'
 import GameOne from './GameOne'
 import { connect } from 'react-redux'
 import { startGameOne } from '../actions/api'
@@ -28,8 +27,6 @@ const mapStateToProps = (state) => {
         randomDogsImages: game.images,
         actualBreedsDisplayed: game.breeds
     }
-
-    return {}
 }
 
 export default connect(mapStateToProps, {startGameOne})(GameOneContainer)

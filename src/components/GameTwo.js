@@ -1,44 +1,51 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import { startGameTwo } from '../actions/api'
+import { connect } from 'react-redux'
 
 class GameTwo extends Component {
+render() {
+    if(!this.props.randomDogsImages) return "Loading"
+    if(!this.props.actualBreedsDisplayed) return "Loading"
 
-    CheckAnswer = (event) => {
-        let dogInImage = this.props.randomDogs[0].question[1].search(event.target.value);
-        if (dogInImage === -1) {
-           alert("Wrong answer!")
-        
+    const arrayUrls =  this.props.randomDogsImages
+    const arrayBreeds = this.props.actualBreedsDisplayed
+    const displayedPicture = arrayUrls[Math.floor(Math.random()*arrayUrls.length)]
+
+    const Handleclick = (event) =>{
+        const chosenBreed = event.target.value
+        const answer = displayedPicture.search(chosenBreed)
+
+        if (answer > 0) {
+            alert("Congrats! Your answer is correct!")
+            this.props.startGameTwo()
+
         } else {
-            alert("Right answer!")
-           
+            alert("Oh no! Try again!")
         }
-
-        
     }
 
-    
-    
-    render(){
-        const gameOneDogs = this.props.randomDogs[0]
+   return (<div>
+            <h2>Game Two</h2> <h2>your score: </h2>
+            <p>Please select the breed of the dog below</p>
+            <img id={displayedPicture} src={displayedPicture} width="330" height="270" alt=""/>
 
-        return (
-            <div>
-                <h4>Game one</h4>
-                <h1>Score: <i className="paid-feature">Pay to unlock</i></h1>
-                <h4>Match the name with the dog in the picture</h4>
-                <div >
-
-                    <img key={gameOneDogs.question[1]} src={gameOneDogs.question[1]} alt="Dog" width="420" height="380"></img>
-
-                </div>
-                <div>
-                    {gameOneDogs.answers.map(answer =>
-                        <button key={answer} value={answer} onClick={this.CheckAnswer}>{answer}</button>)}
-                </div>
-                <h4><i>Refresh the page to keep playing after you have seen your answer</i></h4>
+            <div >
+            <ul>
+                {arrayBreeds.length > 0
+                    ? arrayBreeds.map(breed =>
+                        <button key={breed} value={breed} onClick={Handleclick}>{breed}</button>
+                    )
+                    :'loading...'
+                }
+            </ul>
             </div>
-        )
-        
-    }
+
+      </div>)
+}
 }
 
-export default GameTwo
+const mapStateToProps = (state) => {
+	return {}
+}
+
+export default connect(mapStateToProps, {startGameTwo})(GameTwo)

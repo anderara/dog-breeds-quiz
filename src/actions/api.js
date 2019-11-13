@@ -1,5 +1,7 @@
 import request from 'superagent'
+
 export const GAME_ONE = 'GAME_ONE'
+export const GAME_TWO = 'GAME_TWO'
 
 const getArrayOfBreeds = (arrayOfUrls) => {
     const splittedUrls = arrayOfUrls.map(url=>{
@@ -34,6 +36,25 @@ export const startGameOne = () => {
                 const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
                 dispatch({
                     type: GAME_ONE,
+                    payload: [{
+                        images: randomDogsImages,
+                        breeds: actualBreedsDisplayed
+                    }]
+                })
+        })
+        .catch(console.error)
+    }
+}
+
+export const startGameTwo = () => {
+    return (dispatch) => {
+        request
+            .get('https://dog.ceo/api/breeds/image/random/3')
+            .then(response => {
+                const randomDogsImages = response.body.message
+                const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
+                dispatch({
+                    type: GAME_TWO,
                     payload: [{
                         images: randomDogsImages,
                         breeds: actualBreedsDisplayed

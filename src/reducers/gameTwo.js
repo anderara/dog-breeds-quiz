@@ -1,8 +1,9 @@
+import { GAME_TWO } from "../actions/api"
+
 const reducer = (state = [], action = {}) => {
     switch (action.type) {
-      case "SET_DOG_QUESTION":
+      case GAME_TWO:
         return [
-          ...state,
           ...action.payload
         ]
       default:
@@ -10,6 +11,5 @@ const reducer = (state = [], action = {}) => {
       }
     }
   
-
-    export default reducer
+export default reducer
     

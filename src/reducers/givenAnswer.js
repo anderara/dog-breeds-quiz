@@ -1,8 +1,8 @@
-import { GAME_ONE } from "../actions/api"
 
-const reducer = (state = [], action = {}) => {
+
+const reducer = (state = null, action = {}) => {
     switch (action.type) {
-        case GAME_ONE:
+        case 'GIVEN_ANSWER':
             return [
                 ...action.payload
             ]
