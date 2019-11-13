@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+export const START_GAME = 'START_GAME'
 export const GAME_ONE = 'GAME_ONE'
 export const GAME_TWO = 'GAME_TWO'
 
@@ -27,7 +28,7 @@ const getArrayOfBreeds = (arrayOfUrls) => {
 //     }]
 // })
 
-export const startGameOne = () => {
+export const startGame = () => {
     return (dispatch) => {
         request
             .get('https://dog.ceo/api/breeds/image/random/3')
@@ -35,7 +36,7 @@ export const startGameOne = () => {
                 const randomDogsImages = response.body.message
                 const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
                 dispatch({
-                    type: GAME_ONE,
+                    type: START_GAME,
                     payload: [{
                         images: randomDogsImages,
                         breeds: actualBreedsDisplayed
@@ -46,21 +47,21 @@ export const startGameOne = () => {
     }
 }
 
-export const startGameTwo = () => {
-    return (dispatch) => {
-        request
-            .get('https://dog.ceo/api/breeds/image/random/3')
-            .then(response => {
-                const randomDogsImages = response.body.message
-                const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
-                dispatch({
-                    type: GAME_TWO,
-                    payload: [{
-                        images: randomDogsImages,
-                        breeds: actualBreedsDisplayed
-                    }]
-                })
-        })
-        .catch(console.error)
-    }
-}
+// export const startGameTwo = () => {
+//     return (dispatch) => {
+//         request
+//             .get('https://dog.ceo/api/breeds/image/random/3')
+//             .then(response => {
+//                 const randomDogsImages = response.body.message
+//                 const actualBreedsDisplayed = getArrayOfBreeds(randomDogsImages)
+//                 dispatch({
+//                     type: GAME_TWO,
+//                     payload: [{
+//                         images: randomDogsImages,
+//                         breeds: actualBreedsDisplayed
+//                     }]
+//                 })
+//         })
+//         .catch(console.error)
+//     }
+// }

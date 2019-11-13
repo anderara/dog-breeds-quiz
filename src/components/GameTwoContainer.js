@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import GameTwo from './GameTwo'
 import { connect } from 'react-redux'
-import { startGameTwo } from '../actions/api'
+import { startGame } from '../actions/api'
 
 class GameTwoContainer extends Component{
     
   componentDidMount() {
-        this.props.startGameTwo()
+        this.props.startGame()
     }
   
     render() {
@@ -22,12 +22,12 @@ class GameTwoContainer extends Component{
 }
    
 const mapStateToProps = (state) => {
-  const [game] = state.gameTwo
+  const [game] = state.startGame
   if (game) return {
         randomDogsImages: game.images,
         actualBreedsDisplayed: game.breeds
     }
 }
    
-export default connect(mapStateToProps, {startGameTwo})(GameTwoContainer)
+export default connect(mapStateToProps, {startGame})(GameTwoContainer)
     

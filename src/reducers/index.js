@@ -1,18 +1,16 @@
 import { combineReducers } from 'redux'
 import breeds from './breeds'
 import breedImages from './breedImages'
-import gameOne from './gameOne'
+import startGame from './startGame'
 import gifsHomePage from './gifsHomePage'
-import gameTwo from './gameTwo'
 import givenAnswer from './givenAnswer'
 
 
 export default combineReducers ({
     breeds,
     breedImages,
-    gameOne,
+    startGame,
     gifsHomePage,
-    gameTwo,
     givenAnswer
 
 })

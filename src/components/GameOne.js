@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { startGameOne } from '../actions/api'
+import { startGame } from '../actions/api'
 import {wrongAnswer, correctAnswer, isItCorrect} from '../actions/answer'
 import { connect } from 'react-redux'
 
@@ -55,4 +55,4 @@ const mapStateToProps = (state) => {
 	return {}
 }
 
-export default connect(mapStateToProps, {startGameOne, wrongAnswer, correctAnswer, isItCorrect})(GameOne)
+export default connect(mapStateToProps, {startGame, wrongAnswer, correctAnswer, isItCorrect})(GameOne)
