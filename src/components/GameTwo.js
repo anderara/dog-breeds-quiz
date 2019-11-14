@@ -15,14 +15,12 @@ render() {
     const Handleclick = (event) =>{
         const chosenBreed = event.target.value
         const answer = displayedPicture.search(chosenBreed)
-        console.log('the answer is', answer)
 
         this.props.isItCorrect(answer, displayedPicture)
-
     }
 
    return (<div>
-            <h2>Game Two</h2> <h2>your score: </h2>
+            <h2>Game #1</h2>
             <p>Please select the breed of the dog below</p>
             <img id={displayedPicture} src={displayedPicture} width="330" height="270" alt=""/>
 

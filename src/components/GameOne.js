@@ -21,7 +21,7 @@ class GameOne extends Component {
     }
 
    return (<div>
-            <h2>Game Two</h2> <h2>your score: </h2>
+            <h2>Game #2</h2>
             <p>Please select the picture displaying a: </p>
             <h3> {correctBreed} </h3>
 
