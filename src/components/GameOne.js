@@ -19,23 +19,25 @@ class GameOne extends Component {
         this.props.isItCorrect(answer, correctBreed)
     }
 
-   return (<div>
+   return(
+        <div>
             <h2>Game #2</h2>
             <p>Please select the picture displaying a: </p>
             <h3> {correctBreed} </h3>
 
-            <div >
-            <ul>
-                {arrayUrls.length > 0
-                    ? arrayUrls.map(image =>
-                        <img id={image} onClick={Handleclick} src={image} width="330" height="270" alt=""/>
-                    )
-                    :'loading...'
-                }
-            </ul>
+            <div>
+                <ul>
+                    {arrayUrls.length > 0
+                        ? arrayUrls.map(image =>
+                            <img id={image} onClick={Handleclick} src={image} width="330" height="270" alt=""/>
+                        )
+                        :'loading...'
+                    }
+                </ul>
             </div>
 
-      </div>)
+        </div>
+        )
 }
 }
 
