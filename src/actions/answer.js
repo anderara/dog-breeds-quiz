@@ -51,11 +51,10 @@ export const isItCorrect = (answer, correctUrl) => {
             dispatch(upcomingAnswer())
         } else {
             dispatch(answerGame(correctUrl))
-            await sleep(ONE_THIRD_OF_A_SECOND)
             dispatch(wrongAnswer())
-            await sleep(HALF_A_SECOND)
-            dispatch(startGame())
             await sleep(TWO_SECONDS)
+            dispatch(startGame())
+            await sleep(HALF_A_SECOND)
             dispatch(upcomingAnswer())
         }
     }
