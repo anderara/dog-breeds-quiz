@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { startGame } from '../actions/api'
-import {wrongAnswer, correctAnswer, isItCorrect} from '../actions/answer'
+import { isItCorrect } from '../actions/answer'
 import { connect } from 'react-redux'
 
 class GameOne extends Component {
@@ -44,4 +43,4 @@ const mapStateToProps = (state) => {
 	return {}
 }
 
-export default connect(mapStateToProps, {startGame, wrongAnswer, correctAnswer, isItCorrect})(GameOne)
+export default connect(mapStateToProps, { isItCorrect })(GameOne)
