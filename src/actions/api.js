@@ -1,8 +1,6 @@
 import request from 'superagent'
 
 export const START_GAME = 'START_GAME'
-export const GAME_ONE = 'GAME_ONE'
-export const GAME_TWO = 'GAME_TWO'
 
 const getArrayOfBreeds = (arrayOfUrls) => {
     const splittedUrls = arrayOfUrls.map(url=>{
