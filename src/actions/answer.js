@@ -2,7 +2,7 @@ import { startGame } from './api'
 
 const HALF_A_SECOND = 500
 const ONE_THIRD_OF_A_SECOND = 333
-const TWO_SECONDS = 1600
+const TWO_SECONDS = 2000
 
 const sleep = (duration) => new Promise((resolve) => {
     setTimeout(() => {
@@ -33,7 +33,6 @@ export const upcomingAnswer = () => {
 
 export const ANSWER_GAME = 'ANSWER_GAME'
 export const answerGame = (correctUrl) => {
-    console.log('answer payload', correctUrl)
 	return (dispatch) => {
         dispatch({
         type: ANSWER_GAME,
@@ -51,7 +50,6 @@ export const isItCorrect = (answer, correctUrl) => {
             await sleep(TWO_SECONDS)
             dispatch(upcomingAnswer())
         } else {
-            console.log('isItcorrect', correctUrl)
             dispatch(answerGame(correctUrl))
             await sleep(ONE_THIRD_OF_A_SECOND)
             dispatch(wrongAnswer())
