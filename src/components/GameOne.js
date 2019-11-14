@@ -17,8 +17,6 @@ class GameOne extends Component {
     const Handleclick = (event) =>{
         const chosenPic = event.target.id
         const answer = chosenPic.search(correctBreed)
-        console.log('the answer is', answer)
-
         this.props.isItCorrect(answer, correctBreed)
     }
 
