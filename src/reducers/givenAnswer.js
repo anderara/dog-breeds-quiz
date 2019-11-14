@@ -1,5 +1,3 @@
-
-
 const reducer = (state = null, action = {}) => {
     switch (action.type) {
         case 'UPCOMING_ANSWER':
