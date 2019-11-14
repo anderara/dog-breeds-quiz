@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 
 class HomeContainer extends React.Component {
 
-  render() {    
-    // console.log("PROPS TEST", this.props.gifs)
-
+  render() {
     return <Home gifs = {this.props.gifs}/> 
   }
 }
