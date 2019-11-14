@@ -20,14 +20,6 @@ const getArrayOfBreeds = (arrayOfUrls) => {
     return breedsFromImages
 }
 
-// export const contentGameOne = (randomDogsImages, actualBreedsDisplayed) => ({
-//     type: GAME_ONE,
-//     payload: [{
-//         images: randomDogsImages,
-//         breeds: actualBreedsDisplayed
-//     }]
-// })
-
 export const startGame = () => {
     return (dispatch) => {
         request
