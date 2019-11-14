@@ -3,6 +3,7 @@ import { startGame } from './api'
 const HALF_A_SECOND = 500
 const ONE_THIRD_OF_A_SECOND = 333
 const TWO_SECONDS = 2000
+const ONE_AND_A_HALF_SECOND = 1500
 
 const sleep = (duration) => new Promise((resolve) => {
     setTimeout(() => {
@@ -47,7 +48,7 @@ export const isItCorrect = (answer, correctUrl) => {
             dispatch(correctAnswer())
             await sleep(HALF_A_SECOND)
             dispatch(startGame())
-            await sleep(TWO_SECONDS)
+            await sleep(ONE_AND_A_HALF_SECOND)
             dispatch(upcomingAnswer())
         } else {
             dispatch(answerGame(correctUrl))
