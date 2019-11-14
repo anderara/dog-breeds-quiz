@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import GameOne from './GameOne'
 import CorrectAnswer from './CorrectAnswer'
+import WrongAnswerGameTwo from './WrongAnswerGameTwo'
 import { connect } from 'react-redux'
 import { startGame } from '../actions/api'
 
@@ -23,7 +24,7 @@ class GameOneContainer extends Component{
               :(this.props.givenAnswer === true)?
                 <CorrectAnswer/>
               :
-                <h3>wrong answer!</h3>          
+                <WrongAnswerGameTwo/>          
               }
             </div> 
     

@@ -33,7 +33,6 @@ class GameTwoContainer extends Component{
 }
    
 const mapStateToProps = (state) => {
-  
   const [game] = state.startGame
   if (game) return {
         randomDogsImages: game.images,
